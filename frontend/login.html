@@ -17,11 +17,28 @@
       <input type="password" id="loginSenha" required placeholder="Digite sua senha">
 
       <button type="submit">Entrar</button>
-
     </form>
     <div id="mensagemLogin" style="margin-top: 10px; color: red;"></div>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('loginEmail').value;
+      const senha = document.getElementById('loginSenha').value;
+      const mensagem = document.getElementById('mensagemLogin');
+
+      // Substitua pelos dados desejados
+      const emailCorreto = "admin@sandrinha.com";
+      const senhaCorreta = "123456";
+
+      if (email === emailCorreto && senha === senhaCorreta) {
+        window.location.href = "admin.html";
+      } else {
+        mensagem.textContent = "E-mail ou senha incorretos!";
+      }
+    });
+  </script>
 </body>
 </html>
